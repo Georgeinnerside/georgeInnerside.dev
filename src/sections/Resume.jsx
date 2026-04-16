@@ -171,7 +171,7 @@ export default function Resume() {
                 technical depth in one document.
               </p>
               <a
-                href="#"
+                href="/cv/"
                 download
                 onClick={(e) => e.preventDefault()}
                 className="btn-primary w-full justify-center"
