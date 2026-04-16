@@ -48,7 +48,7 @@ export default function Hero() {
           custom={0}
           className="section-eyebrow mb-5"
         >
-          Frontend Engineer · React & Next.js
+          Frontend Engineer
         </motion.p>
 
         <motion.h1
@@ -68,7 +68,11 @@ export default function Hero() {
             <motion.span
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
-              transition={{ delay: 1.2, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                delay: 1.2,
+                duration: 0.6,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="absolute bottom-1 left-0 h-[3px] w-full bg-electric/50 origin-left block"
             />
           </span>
@@ -82,7 +86,8 @@ export default function Hero() {
           className="text-fog text-lg md:text-xl leading-relaxed mb-10 max-w-lg"
         >
           Building scalable, high-performance applications with React & Next.js.
-          Architecting systems that are fast, maintainable, and production-ready.
+          Architecting systems that are fast, maintainable, and
+          production-ready.
         </motion.p>
 
         <motion.div
@@ -108,7 +113,9 @@ export default function Hero() {
         transition={{ delay: 1.8, duration: 0.6 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-fog"
       >
-        <span className="text-[10px] tracking-[0.3em] uppercase font-semibold">Scroll</span>
+        <span className="text-[10px] tracking-[0.3em] uppercase font-semibold">
+          Scroll
+        </span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}

@@ -18,8 +18,6 @@ const skills = [
   "Responsive Design",
 ];
 
-const year_of_experience = [];
-
 const experience = [
   {
     period: "2024 – 2025",
@@ -174,6 +172,7 @@ export default function Resume() {
               </p>
               <a
                 href="#"
+                download
                 onClick={(e) => e.preventDefault()}
                 className="btn-primary w-full justify-center"
               >

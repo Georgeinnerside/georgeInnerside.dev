@@ -5,10 +5,32 @@ import { ExternalLink, Github, ArrowRight } from "lucide-react";
 const projects = [
   {
     id: 1,
+    title: "Analytics Dashboard",
+    href: "https://dasdboard2.vercel.app/",
+    tag: "SaaS Reporting Tool",
+    year: "2026",
+    stack: ["React", "Chart.js", "React Query", "REST API", "Tailwind CSS"],
+    description:
+      "A scalable SaaS analytics dashboard for visualizing and monitoring business metrics in real time. It features interactive charts, role-based access control, and optimized data fetching to deliver fast and responsive insights for both admin and user roles.",
+    challenge:
+      "Addresses inefficient reporting workflows by centralizing analytics into a performant dashboard system, reducing redundant API calls through caching strategies and improving data responsiveness for decision-making.",
+    accent: "#7c5cff",
+    index: "03",
+  },
+  {
+    id: 2,
     title: "Bookify",
+    href: "https://bookify-amber-gamma.vercel.app/",
     tag: "Book Discovery Platform",
-    year: "2024",
-    stack: ["Next.js", "NextAuth", "JWT", "REST API", "Tailwind CSS"],
+    year: "2025",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "NextAuth",
+      "JWT",
+      "REST API",
+      "Tailwind CSS",
+    ],
     description:
       "A Next.js-based book discovery platform integrating external APIs to deliver trending, categorized, and searchable book content. Features dynamic search by title, author, or ISBN, wishlist & cart functionality, and secure user authentication.",
     challenge:
@@ -17,11 +39,19 @@ const projects = [
     index: "01",
   },
   {
-    id: 2,
+    id: 3,
     title: "Yves Furniture",
+    href: "https://yves-furnitures.vercel.app/",
     tag: "E-Commerce Storefront",
-    year: "2024",
-    stack: ["Next.js", "Tailwind CSS", "Sanity CMS", "Stripe"],
+    year: "2026",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Firebase",
+      "Tailwind CSS",
+      "Sanity CMS",
+      "Stripe",
+    ],
     description:
       "A premium furniture e-commerce storefront delivering a curated shopping experience with smooth product filtering, cart management, a polished checkout flow, and a headless CMS-driven content layer.",
     challenge:
@@ -35,14 +65,21 @@ function ProjectCard({ project, index }) {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <motion.div
+    <motion.a
+      href={project.href}
+      target="_blank"
+      rel="noopener noreferrer"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.7, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
+      transition={{
+        duration: 0.7,
+        delay: index * 0.15,
+        ease: [0.22, 1, 0.36, 1],
+      }}
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
-      className="project-card rounded-xl overflow-hidden border"
+      className="project-card block rounded-xl overflow-hidden border"
       style={{
         borderColor: hovered ? project.accent + "55" : "rgba(255,255,255,0.06)",
         background: "rgba(255,255,255,0.025)",
@@ -66,10 +103,12 @@ function ProjectCard({ project, index }) {
             >
               {project.tag}
             </span>
+
             <h3 className="font-display text-3xl font-bold mt-1 text-ghost">
               {project.title}
             </h3>
           </div>
+
           <span
             className="font-display text-5xl font-bold opacity-10 leading-none"
             style={{ color: project.accent }}
@@ -79,7 +118,10 @@ function ProjectCard({ project, index }) {
         </div>
 
         {/* Description */}
-        <p className="text-fog text-sm leading-loose mb-3">{project.description}</p>
+        <p className="text-fog text-sm leading-loose mb-3">
+          {project.description}
+        </p>
+
         <p className="text-fog/60 text-sm leading-loose italic mb-7">
           {project.challenge}
         </p>
@@ -101,24 +143,21 @@ function ProjectCard({ project, index }) {
           ))}
         </div>
 
-        {/* Links */}
+        {/* Links (optional: you can remove now or keep GitHub only) */}
         <div className="flex items-center gap-6">
-          <a
-            href="#"
-            className="flex items-center gap-1.5 text-sm font-semibold transition-colors"
+          <span
+            className="flex items-center gap-1.5 text-sm font-semibold"
             style={{ color: project.accent }}
           >
             Live Demo <ExternalLink size={13} />
-          </a>
-          <a
-            href="#"
-            className="flex items-center gap-1.5 text-sm font-semibold text-fog hover:text-ghost transition-colors"
-          >
+          </span>
+
+          <span className="flex items-center gap-1.5 text-sm font-semibold text-fog">
             GitHub <Github size={13} />
-          </a>
+          </span>
         </div>
       </div>
-    </motion.div>
+    </motion.a>
   );
 }
 
@@ -151,7 +190,7 @@ export default function Projects() {
         </motion.div>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {projects.map((p, i) => (
             <ProjectCard key={p.id} project={p} index={i} />
           ))}
@@ -167,7 +206,7 @@ export default function Projects() {
         >
           More on{" "}
           <a
-            href="https://github.com"
+            href="https://github.com/Georgeinnerside"
             target="_blank"
             rel="noreferrer"
             className="text-electric hover:text-glow transition-colors flex items-center gap-1"
