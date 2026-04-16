@@ -181,7 +181,7 @@ export default function Resume() {
               </p>
               <a
                 href="/cv/main-resume.pdf"
-                download="Emmanuel_George_Bassey_Resume.pdf"
+                download="main-resume.pdf"
                 className="btn-primary w-full justify-center"
               >
                 <Download size={14} /> Download CV
