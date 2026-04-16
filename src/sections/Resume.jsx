@@ -181,7 +181,6 @@ export default function Resume() {
               </p>
               <button
                 onClick={handleDownload}
-                href="/cv/main-resume.pdf"
                 className="btn-primary w-full justify-center"
               >
                 <Download size={14} /> Download CV
