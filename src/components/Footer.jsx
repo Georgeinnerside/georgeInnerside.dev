@@ -72,7 +72,7 @@ export default function Footer() {
           </p>
           <span className="hidden sm:block text-fog/20">·</span>
           <p className="text-[11px] text-fog/30 tracking-widest uppercase">
-            Built with React · Tailwind · Framer Motion
+            Frontend Engineer
           </p>
         </div>
       </div>
