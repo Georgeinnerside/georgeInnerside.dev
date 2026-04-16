@@ -114,7 +114,7 @@
 
 /* Hero image overlay */
 .hero-bg {
-  background-image: url("/public/dev-background.jpg");
+  background-image: url("/dev-background.jpg");
   background-size: cover;
   background-position: center 30%;
 }

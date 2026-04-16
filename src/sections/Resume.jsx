@@ -65,14 +65,14 @@ function TimelineItem({ item, index }) {
 }
 
 export default function Resume() {
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = "/cv/main-resume.pdf";
-    link.download = "main-resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  // const handleDownload = () => {
+  //   const link = document.createElement("a");
+  //   link.href = "/cv/main-resume.pdf";
+  //   link.download = "main-resume.pdf";
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // };
 
   return (
     <section
@@ -179,12 +179,13 @@ export default function Resume() {
                 Get the complete picture — work history, education, and
                 technical depth in one document.
               </p>
-              <button
-                onClick={handleDownload}
+              <a
+                href="/cv/main-resume.pdf"
+                download="Emmanuel_George_Bassey_Resume.pdf"
                 className="btn-primary w-full justify-center"
               >
                 <Download size={14} /> Download CV
-              </button>
+              </a>
             </div>
 
             {/* Stats */}
